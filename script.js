@@ -1,3 +1,5 @@
+// uses Pollinations AI API (https://pollinations.ai/) for image generation
+
 const themeToggle = document.querySelector(".theme-toggle");
 const promptForm = document.querySelector(".prompt-form");
 const promptInput = document.querySelector(".prompt-input");
@@ -8,7 +10,7 @@ const ratioSelect = document.getElementById("ratio-select");
 const gridGallery = document.querySelector(".gallery-grid");
 
 const examplePrompts = [
-    "A magic forest with glowing plants and fairy homes among giant mushrooms",
+    "A magic forest with glowing plants an6d fairy homes among giant mushrooms",
     "An old steampunk airship floating through golden clouds at sunset",
     "A future Mars colony with glass domes and gardens against red mountains",
     "A dragon sleeping on gold coins in a crystal cave",
@@ -23,21 +25,21 @@ const examplePrompts = [
     "A cyberpunk city with neon signs and flying cars at night",
     "A peaceful bamboo forest with a hidden ancient temple",
     "A giant turtle carrying a village on its back in the ocean",
-    "A whimsical treehouse village nestled among giant glowing mushrooms in an enchanted forest.",
-    "A steampunk airship docking at a Victorian sky-city made of intricate clockwork.",
-    "A bioluminescent coral reef teeming with bizarre and colorful deep-sea creatures.",
-    "A desolate Martian landscape with a lone astronaut gazing at a swirling nebula.",
-    "A cozy hobbit hole built into a rolling green hill with a smoking chimney.",
-    "A surreal dreamscape with melting clocks and floating islands in a pastel sky.",
-    "A majestic ice dragon soaring above snow-capped mountains under a full moon.",
-    "A bustling alien cantina filled with diverse and strange extraterrestrial patrons.",
-    "A forgotten library overgrown with vines and filled with floating books.",
-    "A vibrant street art mural covering the side of a futuristic skyscraper.",
-    "A serene Japanese garden with a stone lantern and cherry blossoms in the rain.",
+    "A whimsical treehouse village nestled among giant glowing mushrooms in an enchanted forest",
+    "A steampunk airship docking at a Victorian sky-city made of intricate clockwork",
+    "A bioluminescent coral reef teeming with bizarre and colorful deep-sea creatures",
+    "A desolate Martian landscape with a lone astronaut gazing at a swirling nebula",
+    "A cozy hobbit hole built into a rolling green hill with a smoking chimney",
+    "A surreal dreamscape with melting clocks and floating islands in a pastel sky",
+    "A majestic ice dragon soaring above snow-capped mountains under a full moon",
+    "A bustling alien cantina filled with diverse and strange extraterrestrial patrons",
+    "A forgotten library overgrown with vines and filled with floating books",
+    "A vibrant street art mural covering the side of a futuristic skyscraper",
+    "A serene Japanese garden with a stone lantern and cherry blossoms in the rain",
     "A mystical portal opening up in the middle of a dense, fog-shrouded forest.",
-    "A playful group of robotic animals exploring a lush, overgrown jungle.",
-    "A dramatic lightning storm over a dark and stormy ocean with a lone sailboat.",
-    "An ancient Egyptian tomb filled with hieroglyphs and golden treasures."
+    "A playful group of robotic animals exploring a lush, overgrown jungle",
+    "A dramatic lightning storm over a dark and stormy ocean with a lone sailboat",
+    "An ancient Egyptian tomb filled with hieroglyphs and golden treasures"
 ];
 
 // set theme based on saved preference or system default
@@ -69,7 +71,7 @@ const updateImageCard = (imgIndex, imgUrl) => {
     imgCard.classList.remove("loading");
     imgCard.innerHTML = `<img src="${imgUrl}" class="result-img">
                             <div class="img-overlay">
-                                <a href="${imgUrl}" class="img-download-btn" download="${Date.now()}.png">
+                                <a href="${imgUrl}" class="img-download-btn" download="${Date.now()}">
                                     <i class="fa-solid fa-download"></i>
                                 </button>
                             </div>`;
@@ -162,7 +164,7 @@ const createImageCards = (imageCount, aspectRatio, promptText) => {
 
     for (let i = 0; i < imageCount; i++) {
         gridGallery.innerHTML +=
-            `<div class="img-card loading" id="img-card-${i}" style="aspect-ratio: ${aspectRatio}; width: ${width}px; height: ${height}px;">
+            `<div class="img-card loading" id="img-card-${i}" style="aspect-ratio: ${aspectRatio};">
                 <div class="status-container">
                     <div class="spinner"></div>
                     <i class="fa-solid fa-triangle-exclamation"></i>

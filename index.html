@@ -12,8 +12,7 @@
         <header class="header">
             <div class="logo-wrapper">
                 <div class="logo">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-
+                     <img class="logo-husky" src="./images/logo.png">
                 </div>
                 <h1>AI Image Generator</h1>
             </div>
@@ -22,13 +21,11 @@
                 <i class="fa-solid fa-moon"></i>
             </button>
         </header>
-        
-        
         <div class="main-content">
             <form action="#" class="prompt-form">
                 <!-- Prompt Container -->
                 <div class="prompt-container">
-                    <textarea class="prompt-input" placeholder="Describe your imagination in detail.." required autofocus></textarea>  
+                    <textarea class="prompt-input" placeholder="Describe your imagination in detail or press the Random Generator Button." required autofocus></textarea>  
                     <button type="button" class="prompt-btn">
                         <i class="fa-solid fa-dice"></i>
                     </button>                 
@@ -54,17 +51,25 @@
                             <option value="9/16">Portrait (9:16)</option>
                         </select>
                     </div>
-
                     <button type="submit" class="generate-btn">
                         <i class="fa-solid fa-wand-sparkles"></i>
                         Generate
                     </button>
-
                 </div>
-
                 <!-- Result Gallery Grid -->
                 <div class="gallery-grid"></div>
             </form>
+            <footer>
+                <p class="foot-text">Designed & Built by Emre Civas.</p>
+                <div id="socials-container">
+                    <a href="https://github.com/visi0nz" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github icon" alt="My Github profile"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/emre-civas/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin icon" alt="My Linkedin profile"></i>
+                    </a>
+                </div>
+            </footer>
         </div>
     </div>
     <script src="script.js"></script>
